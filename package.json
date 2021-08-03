@@ -1,0 +1,56 @@
+{
+  "name": "op-converter",
+  "description": "OpenApi 3.0 to Postman converter",
+  "version": "0.0.0",
+  "author": "Wei Kang @weikangchia",
+  "bin": {
+    "op-converter": "./bin/run"
+  },
+  "bugs": "https://github.com/weikangchia/op-converter/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.2",
+    "tslib": "^1.14.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@types/jest": "26.0.22",
+    "@types/node": "^10.17.60",
+    "@typescript-eslint/eslint-plugin": "4.22.0",
+    "@typescript-eslint/parser": "4.22.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "8.2.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "jest": "26.6.3",
+    "prettier": "2.2.1",
+    "ts-jest": "26.5.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.10"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/weikangchia/op-converter",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "op-converter"
+  },
+  "repository": "weikangchia/op-converter",
+  "scripts": {
+    "posttest": "eslint . --ext .ts --config .eslintrc.js",
+    "prepack": "rm -rf lib && tsc -b",
+    "test": "jest --passWithNoTests",
+    "version": "oclif-dev readme && git add README.md",
+    "prettier-format": "prettier --config .prettierrc.js 'src/**/*.ts' --write"
+  },
+  "types": "lib/index.d.ts"
+}
