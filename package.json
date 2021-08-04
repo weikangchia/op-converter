@@ -1,7 +1,7 @@
 {
   "name": "op-converter",
   "description": "OpenApi 3.0 to Postman converter",
-  "version": "0.0.2-0",
+  "version": "0.0.2",
   "author": "Wei Kang @weikangchia",
   "bin": {
     "op-converter": "./bin/run"
