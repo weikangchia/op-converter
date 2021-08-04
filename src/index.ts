@@ -156,7 +156,7 @@ class OpConverter extends Command {
       .map((parameter: any) => {
         return {
           key: parameter.name,
-          value: parameter.required ? String(parameter.example) : '',
+          value: '',
           description: parameter.description,
         };
       });
