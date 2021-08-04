@@ -16,7 +16,7 @@ class OpConverter extends Command {
     name: flags.string({ char: 'n', description: 'collection name' }),
     openApiFile: flags.string({ char: 'f', description: 'path to OpenApi file' }),
     hostVariable: flags.string({ description: 'host variable e.g. {{ALLOTMENT_URL}}' }),
-    config: flags.string({ description: 'path to config' }),
+    config: flags.string({ description: 'custom config file name (default is config.json)' }),
   };
 
   async run() {
@@ -53,18 +53,23 @@ class OpConverter extends Command {
 
       const requestMethod = this.extractMethodFrom(openApiRequest);
 
-      let modifiedRequestPath = requestPath;
-
       const requestPathInArray = this.breakdownRequestPathToArrayFrom(requestPath, config.path);
       const transformedPathInArray = this.transformVariableInPathArray(requestPathInArray);
-      const queryParameters = this.extractQueryFrom(openApiRequest[requestMethod].parameters);
+
+      let queryParameters = [];
+      if ('parameters' in openApiRequest[requestMethod]) {
+        queryParameters = this.extractQueryFrom(openApiRequest[requestMethod].parameters);
+      }
 
       let requestBody = {};
       if ('requestBody' in openApiRequest[requestMethod]) {
-        const refArray = openApiRequest[requestMethod].requestBody.content['application/json'].schema['$ref'].split(
+        const refArray = openApiRequest[requestMethod].requestBody.content['application/json']?.schema['$ref']?.split(
           '/',
         );
-        requestBody = this.extractRequestBody(openApi.components.schemas[refArray[refArray.length - 1]]);
+
+        if (refArray && refArray.length > 0) {
+          requestBody = this.extractRequestBody(openApi.components.schemas[refArray[refArray.length - 1]]);
+        }
       }
 
       requests.push({

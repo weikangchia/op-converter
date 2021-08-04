@@ -19,7 +19,7 @@ USAGE
 By default **op-converter** reads all configurable options from `config.json` at the following location
 
 ```
-Unix: ~/.config/gitcg
+Unix: ~/.config/op-converter
 Windows: %LOCALAPPDATA%\gitcg
 Can be overridden with XDG_CONFIG_HOME
 ```
