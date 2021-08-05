@@ -57,9 +57,8 @@ class OpConverter extends Command {
 
       let requestBody = {};
       if ('requestBody' in openApiRequest[requestMethod]) {
-        const refArray = openApiRequest[requestMethod].requestBody.content['application/json']?.schema['$ref']?.split(
-          '/',
-        );
+        const refArray =
+          openApiRequest[requestMethod].requestBody.content['application/json']?.schema['$ref']?.split('/');
 
         if (refArray && refArray.length > 0) {
           requestBody = this.extractRequestBody(openApi.components.schemas[refArray[refArray.length - 1]]);
