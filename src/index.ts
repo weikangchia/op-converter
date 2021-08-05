@@ -39,14 +39,7 @@ class OpConverter extends Command {
     const openApiRaw = await fs.readFile(String(flags.openApiFile));
     const openApi = JSON.parse(openApiRaw.toString());
 
-    const folder: Folder = {
-      name: '',
-      item: [],
-    };
-
-    folder.name = openApi.info.title;
-
-    const requests: any = [];
+    const folders: { [key: string]: Folder } = {};
 
     Object.keys(openApi.paths).forEach((requestPath: string) => {
       const openApiRequest = openApi.paths[requestPath];
@@ -57,6 +50,7 @@ class OpConverter extends Command {
       const transformedPathInArray = this.transformVariableInPathArray(requestPathInArray);
 
       let queryParameters = [];
+
       if ('parameters' in openApiRequest[requestMethod]) {
         queryParameters = this.extractQueryFrom(openApiRequest[requestMethod].parameters);
       }
@@ -72,7 +66,18 @@ class OpConverter extends Command {
         }
       }
 
-      requests.push({
+      const tag = openApiRequest[requestMethod].tags[0];
+      if (!(tag in folders)) {
+        const tagObject = openApi.tags.find((currentTag: any) => currentTag.name === tag);
+
+        folders[tag] = {
+          name: tag,
+          description: tagObject ? tagObject.description : '',
+          item: [],
+        };
+      }
+
+      folders[tag].item?.push({
         name: openApi.paths[requestPath][requestMethod].operationId,
         request: {
           method: requestMethod.toUpperCase(),
@@ -88,9 +93,7 @@ class OpConverter extends Command {
       });
     });
 
-    folder.item = requests;
-
-    postmanTemplate.item?.push(folder);
+    Object.values(folders).forEach((folder: any) => postmanTemplate.item?.push(folder));
 
     console.log(JSON.stringify(postmanTemplate));
   }
