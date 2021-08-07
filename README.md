@@ -1,17 +1,33 @@
-# op-converter
+# OpenAPI 3.0 to Postman 2.1 Collections Converter
 
-A customizable converter for OpenAPI 3.0 to Postman 2.1 Collections.
+**op-converter** is a customizable converter for OpenAPI 3.0 to Postman 2.1 Collections.
 
 ## Getting Started
 
+### Pre-requisites
+
+- Install [node](https://nodejs.org/en/download/)
+- Install op-converter
+  ```
+  npm install -g op-converter
+  ```
+
 ### Usage
 ```sh-session
-$ npm install -g op-converter
-$ op-converter COMMAND
-running command...
-$ op-converter --help [COMMAND]
-USAGE
-  $ op-converter COMMAND
+USAGE:
+    op-converter
+
+OPTIONS:
+    - f, --openApiFile=openApiFile    path to OpenAPI file
+    - h, --help                       show CLI help
+    - n, --name=name                  collection name
+    --config=config                   custom config file name (default is config.json)
+    --hostVariable=hostVariable.      host variable e.g. {{ALLOTMENT_URL}}
+```
+
+**Examples**
+```
+op-converter -f ./openapi.json -n "My Collection" --hostVariable="{{ALLOTMENT_URL}}" > postman.json
 ```
 
 ## Configuration Options
@@ -21,7 +37,6 @@ By default **op-converter** reads all configurable options from `config.json` at
 ```
 Unix: ~/.config/op-converter
 Windows: %LOCALAPPDATA%\gitcg
-Can be overridden with XDG_CONFIG_HOME
 ```
 
 Below are the available configurable options.
@@ -160,3 +175,14 @@ Example
   ]
 }
 ```
+
+## License
+
+Distributed under the MIT License. See [LICENSE](license) for more information.
+
+## Contributing
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+## Contact
+
+Wei Kang - weikangchia@gmail.com
