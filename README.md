@@ -1,6 +1,6 @@
 # op-converter
 
-A converter to convert OpenApi 3.0 doc to Postman collection.
+A customizable converter for OpenAPI 3.0 to Postman 2.1 Collections.
 
 ## Getting Started
 
@@ -144,6 +144,7 @@ Postman event field
 | type      | array |
 | mandatory | false |
 
+Example
 ```json
 {
   "events": [
