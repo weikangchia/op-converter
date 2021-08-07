@@ -157,5 +157,12 @@ Example
 ```
 
 ## License
-MIT License
-Copyright © 2021 Wei Kang weikangchia@gmail.com
+
+Distributed under the MIT License. See [LICENSE](license.md) for more information.
+
+## Contributing
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+## Contact
+
+Wei Kang - weikangchia@gmail.com
