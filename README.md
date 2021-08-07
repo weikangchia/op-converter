@@ -1,17 +1,13 @@
-# op-converter
+# OpenAPI 3.0 to Postman 2.1 Collections Converter
 
-A customizable converter for OpenAPI 3.0 to Postman 2.1 Collections.
+op-converter is a customizable converter for OpenAPI 3.0 to Postman 2.1 Collections.
 
 ## Getting Started
 
 ### Usage
 ```sh-session
 $ npm install -g op-converter
-$ op-converter COMMAND
-running command...
-$ op-converter --help [COMMAND]
-USAGE
-  $ op-converter COMMAND
+$ op-converter --help
 ```
 
 ## Configuration Options
@@ -21,7 +17,6 @@ By default **op-converter** reads all configurable options from `config.json` at
 ```
 Unix: ~/.config/op-converter
 Windows: %LOCALAPPDATA%\gitcg
-Can be overridden with XDG_CONFIG_HOME
 ```
 
 Below are the available configurable options.
@@ -160,3 +155,7 @@ Example
   ]
 }
 ```
+
+## License
+MIT License
+Copyright © 2021 Wei Kang weikangchia@gmail.com
