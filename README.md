@@ -178,7 +178,7 @@ Example
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](license.md) for more information.
+Distributed under the MIT License. See [LICENSE](license) for more information.
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
