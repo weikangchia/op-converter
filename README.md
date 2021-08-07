@@ -18,16 +18,16 @@ USAGE:
     op-converter
 
 OPTIONS:
-    - f, --openApiFile=openApiFile    path to OpenAPI file
+    - f, --openApiFile=openApiFile    path to your OpenAPI 3.0 JSON file
     - h, --help                       show CLI help
-    - n, --name=name                  collection name
+    - n, --name=name                  name for your postman collection
+    --baseUrl=baseUrl                 base url
     --config=config                   custom config file name (default is config.json)
-    --hostVariable=hostVariable.      host variable e.g. {{ALLOTMENT_URL}}
 ```
 
 **Examples**
 ```
-op-converter -f ./openapi.json -n "My Collection" --hostVariable="{{ALLOTMENT_URL}}" > postman.json
+op-converter -f ./openapi.json -n "My Collection" --baseUrl="http://localhost" > postman.json
 ```
 
 ## Configuration Options

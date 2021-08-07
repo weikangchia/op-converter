@@ -13,9 +13,9 @@ class OpConverter extends Command {
 
   static flags = {
     help: flags.help({ char: 'h' }),
-    name: flags.string({ char: 'n', description: 'collection name' }),
-    openApiFile: flags.string({ char: 'f', description: 'path to OpenApi file' }),
-    hostVariable: flags.string({ description: 'host variable e.g. {{ALLOTMENT_URL}}' }),
+    name: flags.string({ char: 'n', description: 'name for your postman collection' }),
+    openApiFile: flags.string({ char: 'f', description: 'path to your OpenAPI 3.0 JSON file' }),
+    baseUrl: flags.string({ description: 'base url' }),
     config: flags.string({ description: 'custom config file name (default is config.json)' }),
   };
 
@@ -82,7 +82,7 @@ class OpConverter extends Command {
           method: requestMethod.toUpperCase(),
           header: [],
           url: {
-            host: [flags.hostVariable],
+            host: [flags.baseUrl],
             path: transformedPathInArray,
             query: queryParameters,
           },
