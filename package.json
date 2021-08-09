@@ -1,6 +1,6 @@
 {
   "name": "op-converter",
-  "description": "OpenApi 3.0 to Postman converter",
+  "description": "Customizable Converter for OpenAPI 3.0 to Postman 2.1 Collections",
   "version": "0.0.5",
   "author": "Wei Kang @weikangchia",
   "bin": {
@@ -37,7 +37,7 @@
   ],
   "homepage": "https://github.com/weikangchia/op-converter",
   "keywords": [
-    "oclif"
+    "typescript", "tools", "swagger", "postman", "developer-tools", "postman-collection", "openapi3", "oclif"
   ],
   "license": "MIT",
   "main": "lib/index.js",
