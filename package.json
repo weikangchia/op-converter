@@ -1,7 +1,7 @@
 {
   "name": "op-converter",
   "description": "Customizable Converter for OpenAPI 3.0 to Postman 2.1 Collections",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Wei Kang @weikangchia",
   "bin": {
     "op-converter": "./bin/run"
