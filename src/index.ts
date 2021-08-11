@@ -67,7 +67,7 @@ class OpConverter extends Command {
 
       const tag = openApiRequest[requestMethod].tags[0];
       if (!(tag in folders)) {
-        const tagObject = openApi.tags.find((currentTag: any) => currentTag.name === tag);
+        const tagObject = openApi.tags?.find((currentTag: any) => currentTag.name === tag);
 
         folders[tag] = {
           name: tag,
