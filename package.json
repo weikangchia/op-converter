@@ -37,7 +37,14 @@
   ],
   "homepage": "https://github.com/weikangchia/op-converter",
   "keywords": [
-    "typescript", "tools", "swagger", "postman", "developer-tools", "postman-collection", "openapi3", "oclif"
+    "typescript",
+    "tools",
+    "swagger",
+    "postman",
+    "developer-tools",
+    "postman-collection",
+    "openapi3",
+    "oclif"
   ],
   "license": "MIT",
   "main": "lib/index.js",
