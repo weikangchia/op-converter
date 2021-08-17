@@ -185,4 +185,4 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Contact
 
-Wei Kang - weikangchia@gmail.com
+Wei Kang - weikangchia[@]gmail.com
